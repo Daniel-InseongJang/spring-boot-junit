@@ -10,11 +10,11 @@ import java.util.List;
 @Service
 @Transactional
 @AllArgsConstructor
-public class UserService {
+public class PersonService {
 
-    private final UserRepository userRepository;
+    private final PersonRepository personRepository;
 
-    public List<User> getUsers(){
-        return userRepository.findAll();
+    public List<Person> getUsers(){
+        return personRepository.findAll();
     }
 }

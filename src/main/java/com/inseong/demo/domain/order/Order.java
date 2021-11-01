@@ -1,10 +1,12 @@
 package com.inseong.demo.domain.order;
 
+import com.inseong.demo.domain.user.Person;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "orders")
@@ -14,9 +16,12 @@ public class Order {
 
     @Id
     @GeneratedValue
-    private long orders_id;
+    long id;
 
-    @Column(name = "price")
-    private double price;
+    @ManyToOne
+    Person person;
+
+    @Column
+    BigDecimal price;
 
 }
